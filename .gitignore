@@ -1,0 +1,46 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+httpfromtcp
+
+# Go vendor directory (if used)
+vendor/
+
+# Go build artifacts
+*.log
+*.out
+*.test
+*.prof
+*.sum
+*.mod
+
+# Dependency directories (Common)
+bin/
+pkg/
+obj/
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Test binary
+*.test
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# macOS system files
+.DS_Store
+
+# Linux system files
+*.pid
+*.seed
+
+# ctags
+tags
