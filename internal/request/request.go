@@ -3,7 +3,6 @@ package request
 import (
 	"bytes"
 	"errors"
-	"fmt"
 	"io"
 	"strings"
 	"unicode"
@@ -98,7 +97,7 @@ func RequestFromReader(reader io.Reader) (*Request, error) {
 }
 
 func parseRequestLine(data []byte) (*RequestLine, int, error) {
-	fmt.Printf("parseRequestLineData:%s\n", string(data))
+	//fmt.Printf("parseRequestLineData:%s\n", string(data))
 	reqLine := &RequestLine{}
 	idx := bytes.Index(data, []byte("\r\n"))
 	if idx == -1 {
@@ -121,7 +120,7 @@ func requestLineFromString(dataString string) (*RequestLine, error) {
 	dataSlice := strings.Split(dataString, "\r\n")
 	reqLineString := dataSlice[0]
 	reqLineSlice := strings.Split(reqLineString, " ")
-	fmt.Printf("dataSlice:%v\n", dataSlice)
+	//fmt.Printf("dataSlice:%v\n", dataSlice)
 	if len(reqLineSlice) != 3 {
 		return nil, errors.New("invalid request line")
 	}
@@ -150,7 +149,7 @@ func requestLineFromString(dataString string) (*RequestLine, error) {
 func (r *Request) parse(data []byte) (int, error) {
 
 	if r.ParserState == initialized {
-		fmt.Printf("parseData:%s\n", string(data))
+		//fmt.Printf("parseData:%s\n", string(data))
 		reqL, n, err := parseRequestLine(data)
 		if err != nil {
 
